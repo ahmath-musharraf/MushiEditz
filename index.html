@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mushi Editz - Digital Agency</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="#home" class="logo-link">
+                        <div class="logo-icon">
+                            <div class="logo-icon-line"></div>
+                            <div class="logo-icon-line"></div>
+                            <div class="logo-icon-glow"></div>
+                        </div>
+                        <span class="logo-text">
+                            <span class="logo-text-main">Mushi</span>
+                            <span class="logo-text-accent">Editz</span>
+                        </span>
+                    </a>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li><a href="#case-studies" class="nav-link">Case Studies</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <a href="#contact" class="btn-nav">Request a Quote</a>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <canvas id="particles-canvas"></canvas>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-text">✨ Digital Innovation</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">We Create</span>
+                <span class="title-line gradient-text">Digital Experiences</span>
+                <span class="title-line">That Matter</span>
+            </h1>
+            <p class="hero-subtitle">Transforming ideas into powerful digital solutions that drive growth and engagement</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    <span>Get Started</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#portfolio" class="btn btn-secondary">View Our Work</a>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <p>Scroll to explore</p>
+            </div>
+        </div>
+        <div class="hero-background">
+            <div class="gradient-overlay"></div>
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-number" data-target="150">0</div>
+                    <div class="stat-plus">+</div>
+                    <p class="stat-label">Brands</p>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" data-target="100">0</div>
+                    <div class="stat-plus">+</div>
+                    <p class="stat-label">Employees</p>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" data-target="10">0</div>
+                    <div class="stat-plus">+</div>
+                    <p class="stat-label">Awards</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section id="why-us" class="why-us">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Mushi Editz?</h2>
+                <p class="section-subtitle">Partnering for Smart Growth and Brand Success</p>
+            </div>
+            <div class="why-us-grid">
+                <div class="why-us-card">
+                    <div class="why-us-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h3>We understand your goals</h3>
+                    <p>We begin by deeply understanding your vision and objectives. Acknowledging that each client has unique aspirations, we craft strategies designed to achieve your goals comprehensively.</p>
+                </div>
+                <div class="why-us-card">
+                    <div class="why-us-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <h3>We enhance your strategies</h3>
+                    <p>We work with you to elevate your digital marketing strategies, ensuring consistent growth and helping your business thrive in today's competitive landscape.</p>
+                </div>
+                <div class="why-us-card">
+                    <div class="why-us-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                    </div>
+                    <h3>We build lasting success</h3>
+                    <p>True success lies in creating long-term strategies that stand the test of time. We focus on sustainable growth by tailoring plans that adapt to market dynamics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Comprehensive digital solutions for your business</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-number">01</div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Custom websites and web applications built with cutting-edge technologies</p>
+                    <div class="service-link">Learn more →</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">02</div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <h3>Mobile Apps</h3>
+                    <p>Native and cross-platform mobile applications for iOS and Android</p>
+                    <div class="service-link">Learn more →</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">03</div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h3>UI/UX Design</h3>
+                    <p>Beautiful and intuitive user interfaces that enhance user experience</p>
+                    <div class="service-link">Learn more →</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">04</div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="22" y1="12" x2="18" y2="12"></line>
+                            <path d="M4.93 4.93l4.24 4.24"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M18.01 18.01l-4.24-4.24"></path>
+                        </svg>
+                    </div>
+                    <h3>Digital Marketing</h3>
+                    <p>Strategic marketing campaigns to boost your online presence</p>
+                    <div class="service-link">Learn more →</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">05</div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="7.5 4.21 12 6.81 16.5 4.21"></polyline>
+                            <polyline points="7.5 19.79 7.5 14.6 3 12"></polyline>
+                            <polyline points="21 12 16.5 14.6 16.5 19.79"></polyline>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h3>E-Commerce</h3>
+                    <p>Complete e-commerce solutions to grow your online business</p>
+                    <div class="service-link">Learn more →</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">06</div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 20h9"></path>
+                            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                        </svg>
+                    </div>
+                    <h3>Branding</h3>
+                    <p>Complete brand identity design and strategy development</p>
+                    <div class="service-link">Learn more →</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About Mushi Editz</h2>
+                    <p>We are a forward-thinking digital agency dedicated to creating exceptional digital experiences. With a team of talented designers, developers, and strategists, we help businesses transform their digital presence.</p>
+                    <p>Our approach combines creativity, technology, and strategic thinking to deliver solutions that not only look great but also drive real business results.</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h3>500+</h3>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>200+</h3>
+                            <p>Happy Clients</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>10+</h3>
+                            <p>Team Members</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80');">
+                        <div class="image-glow"></div>
+                        <div class="floating-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Owner Message Section -->
+    <section id="owner-message" class="owner-message">
+        <div class="container">
+            <div class="owner-content">
+                <div class="owner-image">
+                    <div class="owner-photo">
+                        <img src="C:\Users\EditorAlkhateeb\Documents\Downloads\Musharraf Photo.jpg" alt="Ahmath Musharraf - Founder & CEO" id="ownerImage">
+                        <div class="owner-photo-glow"></div>
+                    </div>
+                </div>
+                <div class="owner-text">
+                    <div class="owner-badge">Message from the Founder</div>
+                    <h2 class="owner-title">A Personal Note</h2>
+                    <div class="owner-quote">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
+                            <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
+                        </svg>
+                    </div>
+                    <p class="owner-message-text">At Mushi Editz, we believe that every business deserves exceptional digital experiences. Our journey began with a simple vision: to bridge the gap between innovative technology and meaningful business outcomes.</p>
+                    <p class="owner-message-text">Over the years, we've had the privilege of working with incredible brands and helping them transform their digital presence. What drives us is not just the technology we build, but the relationships we forge and the success stories we create together.</p>
+                    <p class="owner-message-text">We're committed to pushing boundaries, embracing innovation, and delivering solutions that truly matter. Thank you for being part of our journey, and we look forward to creating something extraordinary with you.</p>
+                    <div class="owner-signature">
+                        <div class="signature-name">Ahmath Musharraf</div>
+                        <div class="signature-title">Founder & CEO, Mushi Editz</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Portfolio</h2>
+                <p class="section-subtitle">Showcasing our best work and creative solutions</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80');">
+                        <div class="portfolio-overlay">
+                            <h3>E-Commerce Platform</h3>
+                            <p>Web Development</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80');">
+                        <div class="portfolio-overlay">
+                            <h3>Mobile Banking App</h3>
+                            <p>Mobile Development</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80');">
+                        <div class="portfolio-overlay">
+                            <h3>Corporate Website</h3>
+                            <p>Web Design</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80');">
+                        <div class="portfolio-overlay">
+                            <h3>Fitness App</h3>
+                            <p>Mobile Development</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80');">
+                        <div class="portfolio-overlay">
+                            <h3>Brand Identity</h3>
+                            <p>Branding</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80');">
+                        <div class="portfolio-overlay">
+                            <h3>Dashboard Design</h3>
+                            <p>UI/UX Design</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section id="case-studies" class="case-studies">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Case Studies</h2>
+                <p class="section-subtitle">Showcasing our successful digital transformations</p>
+            </div>
+            <div class="case-studies-grid">
+                <div class="case-study-card">
+                    <div class="case-study-image" style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80');">
+                        <div class="case-study-overlay">
+                            <h3>E-Commerce Platform</h3>
+                            <p>Web Development</p>
+                        </div>
+                    </div>
+                    <div class="case-study-content">
+                        <h3>E-Commerce Platform</h3>
+                        <p>After electing to take on its own marketing and sales, our client enlisted our help to develop a content and marketing strategy. We assisted with automated content delivery, website optimization for higher conversion rates, and an overall digital marketing strategy.</p>
+                        <a href="#" class="case-study-link">View Case Study →</a>
+                    </div>
+                </div>
+                <div class="case-study-card">
+                    <div class="case-study-image" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80');">
+                        <div class="case-study-overlay">
+                            <h3>Global Brand Strategy</h3>
+                            <p>Digital Marketing</p>
+                        </div>
+                    </div>
+                    <div class="case-study-content">
+                        <h3>Global Brand Strategy</h3>
+                        <p>A worldwide name needed a digital strategy to break into new markets with tailored content that reached this audience while maintaining a global identity. We created a content pillar and global social media strategy to suit different regional needs while encouraging audience and business growth.</p>
+                        <a href="#" class="case-study-link">View Case Study →</a>
+                    </div>
+                </div>
+                <div class="case-study-card">
+                    <div class="case-study-image" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80');">
+                        <div class="case-study-overlay">
+                            <h3>Hotel Brand Awareness</h3>
+                            <p>SEO & Digital Strategy</p>
+                        </div>
+                    </div>
+                    <div class="case-study-content">
+                        <h3>Hotel Brand Awareness</h3>
+                        <p>Our client needed a digital strategy for establishing online brand awareness. With strong competition and low volumes of traffic, they required methods for driving organic ROI using SEO. We provided extensive research and analysis on keywords, user experience, and content creation strategy.</p>
+                        <a href="#" class="case-study-link">View Case Study →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our Clients Say</h2>
+                <p class="section-subtitle">Trusted by leading brands worldwide</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">It is an absolute pleasure to recommend Mushi Editz for website projects. They really are the best in the business. They demonstrated their experience in building the right hierarchy & structure for SEO for websites in an international market context.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face');"></div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Digital Marketing Lead</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">Being skeptical about digital marketing to begin with, we put our faith in Mushi Editz to prove to us that it would indeed benefit our brand and business growth. It didn't take long for them to astound us with their level of expertise and knowledge.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face');"></div>
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>CEO, Tech Solutions</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">Since Mushi Editz has taken over the optimization of our website, we've not only seen an increase in qualified traffic but also an increase in conversions. The team worked closely with our in-house team during the transition, which was incredibly smooth.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background-image: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face');"></div>
+                        <div class="author-info">
+                            <h4>Emily Rodriguez</h4>
+                            <p>Marketing Director</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">When we partnered with Mushi Editz, we expected a 6-month campaign to help us reach our goals. However, they managed to exceed all our expectations and delivered exceptional results in just 4 months. The team made everything feel effortless, even when it was certainly a stressful campaign.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background-image: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face');"></div>
+                        <div class="author-info">
+                            <h4>David Thompson</h4>
+                            <p>VP of Marketing, Global Corp</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">Mushi Editz helped us rank in search engine results across multiple locations and brought us the highest quality leads. Their expertise in SEO and digital marketing has significantly improved our sales. We consider them valuable business partners for our continued growth.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face');"></div>
+                        <div class="author-info">
+                            <h4>Lisa Anderson</h4>
+                            <p>Head of Digital Strategy</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">The level of professionalism and attention to detail from Mushi Editz is outstanding. They don't just tick boxes getting a website done - they really care and go the extra mile. Our new website has transformed our online presence and generated significant business growth.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face');"></div>
+                        <div class="author-info">
+                            <h4>James Wilson</h4>
+                            <p>Founder & CEO, StartupHub</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">Mushi Editz's team is very responsive and senior management is actively involved in the process. They've helped us understand how to run all our digital campaigns at the right time to achieve the best results across multiple countries and different markets. Highly recommended!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face');"></div>
+                        <div class="author-info">
+                            <h4>Maria Garcia</h4>
+                            <p>International Marketing Manager</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">Working with Mushi Editz has been a game-changer for our business. Their strategic approach to digital marketing, combined with their technical expertise, has helped us modernize our marketing strategy and optimize lead generation. The ROI has been exceptional.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background-image: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face');"></div>
+                        <div class="author-info">
+                            <h4>Robert Kim</h4>
+                            <p>Chief Marketing Officer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">Mushi Editz transformed our online presence completely. Their team's expertise in web development and digital strategy helped us achieve our business goals faster than we ever imagined. The results speak for themselves!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background-image: url('https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop&crop=face');"></div>
+                        <div class="author-info">
+                            <h4>Alexandra Brown</h4>
+                            <p>Director of Operations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners & Awards Section -->
+    <section id="partners" class="partners">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Partners & Awards</h2>
+                <p class="section-subtitle">Recognized excellence in digital innovation</p>
+            </div>
+            <div class="partners-grid">
+                <div class="partner-item">Microsoft</div>
+                <div class="partner-item">Amazon</div>
+                <div class="partner-item">HubSpot</div>
+                <div class="partner-item">Google</div>
+                <div class="partner-item">Award Winner</div>
+                <div class="partner-item">Top Agency</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's discuss your next project</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Address</h3>
+                            <p>Sri Lanka</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+94767765080</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>mushieditz@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Mushi Editz</h3>
+                    <p>Creating digital experiences that matter. Transforming ideas into powerful solutions.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Web Development</a></li>
+                        <li><a href="#services">Mobile Apps</a></li>
+                        <li><a href="#services">UI/UX Design</a></li>
+                        <li><a href="#services">Digital Marketing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mushi Editz. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

@@ -577,70 +577,90 @@ portfolioModal.addEventListener('click', (e) => {
     }
 });
 
-// Testimonial Slider
+// Testimonial Slider - 3x3 Grid Transition
 const testimonialCards = document.querySelectorAll('.testimonial-card');
 const testimonialGrid = document.querySelector('.testimonials-grid');
-const prevBtn = document.querySelector('.slider-nav.prev');
-const nextBtn = document.querySelector('.slider-nav.next');
 const dotsContainer = document.getElementById('testimonial-dots');
 
-let currentSlide = 0;
+const itemsPerPage = 3;
+const totalPages = Math.ceil(testimonialCards.length / itemsPerPage);
+let currentPage = 0;
 let autoPlayInterval;
 
+// Add number attribute to cards
+testimonialCards.forEach((card, index) => {
+    card.setAttribute('data-number', `0${(index % itemsPerPage) + 1}`);
+});
+
 // Create dots
-testimonialCards.forEach((_, index) => {
+for (let i = 0; i < totalPages; i++) {
     const dot = document.createElement('div');
     dot.classList.add('slider-dot');
-    if (index === 0) dot.classList.add('active');
-    dot.addEventListener('click', () => goToSlide(index));
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => goToPage(i));
     dotsContainer.appendChild(dot);
-});
+}
 
 const dots = document.querySelectorAll('.slider-dot');
 
-function goToSlide(index) {
-    // Remove active class from all
-    testimonialCards.forEach(card => card.classList.remove('active'));
-    dots.forEach(dot => dot.classList.remove('active'));
+function showPage(pageIndex) {
+    // Hide all cards
+    testimonialCards.forEach(card => {
+        card.style.display = 'none';
+    });
 
-    // Add active to current
-    currentSlide = index;
-    testimonialCards[currentSlide].classList.add('active');
-    dots[currentSlide].classList.add('active');
+    // Show cards for current page
+    const startIndex = pageIndex * itemsPerPage;
+    const endIndex = Math.min(startIndex + itemsPerPage, testimonialCards.length);
 
-    // Move slider
-    testimonialGrid.style.transform = `translateX(-${currentSlide * 100}%)`;
+    for (let i = startIndex; i < endIndex; i++) {
+        testimonialCards[i].style.display = 'flex';
+    }
 }
 
-function nextSlide() {
-    currentSlide = (currentSlide + 1) % testimonialCards.length;
-    goToSlide(currentSlide);
+function goToPage(pageIndex) {
+    // Add transition class
+    testimonialGrid.classList.add('transitioning');
+
+    setTimeout(() => {
+        // Update page
+        currentPage = pageIndex;
+        showPage(currentPage);
+
+        // Update dots
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[currentPage].classList.add('active');
+
+        // Remove transition class
+        setTimeout(() => {
+            testimonialGrid.classList.remove('transitioning');
+        }, 50);
+    }, 300);
 }
 
-function prevSlide() {
-    currentSlide = (currentSlide - 1 + testimonialCards.length) % testimonialCards.length;
-    goToSlide(currentSlide);
+function nextPage() {
+    const nextPageIndex = (currentPage + 1) % totalPages;
+    goToPage(nextPageIndex);
 }
 
-// Event listeners
-prevBtn.addEventListener('click', prevSlide);
-nextBtn.addEventListener('click', nextSlide);
+function prevPage() {
+    const prevPageIndex = (currentPage - 1 + totalPages) % totalPages;
+    goToPage(prevPageIndex);
+}
 
 // Auto-play
 function startAutoPlay() {
-    autoPlayInterval = setInterval(nextSlide, 5000);
+    autoPlayInterval = setInterval(nextPage, 5000);
 }
 
 function stopAutoPlay() {
     clearInterval(autoPlayInterval);
 }
 
-// Initialize first slide
-goToSlide(0);
+// Initialize
+showPage(0);
 startAutoPlay();
 
 // Pause on hover
-const sliderContainer = document.querySelector('.testimonials-slider-container');
-sliderContainer.addEventListener('mouseenter', stopAutoPlay);
-sliderContainer.addEventListener('mouseleave', startAutoPlay);
-
+testimonialGrid.addEventListener('mouseenter', stopAutoPlay);
+testimonialGrid.addEventListener('mouseleave', startAutoPlay);

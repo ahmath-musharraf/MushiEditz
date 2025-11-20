@@ -1965,3 +1965,371 @@ section {
     width: 35px;
     height: 35px;
 }
+
+/* Scroll Progress Indicator */
+.scroll-progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    z-index: 9999;
+    background: transparent;
+}
+
+.scroll-progress-bar {
+    height: 100%;
+    background: var(--gradient-1);
+    width: 0%;
+    transition: width 0.1s ease;
+}
+
+/* Glitch Effect */
+.glitch-text {
+    position: relative;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--dark-bg);
+}
+
+.glitch-text::before {
+    left: 2px;
+    text-shadow: -1px 0 #ff00c1;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+    left: -2px;
+    text-shadow: -1px 0 #00fff9;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim2 5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+    0% {
+        clip: rect(30px, 9999px, 10px, 0);
+    }
+
+    5% {
+        clip: rect(80px, 9999px, 90px, 0);
+    }
+
+    10% {
+        clip: rect(50px, 9999px, 20px, 0);
+    }
+
+    15% {
+        clip: rect(10px, 9999px, 60px, 0);
+    }
+
+    20% {
+        clip: rect(90px, 9999px, 40px, 0);
+    }
+
+    25% {
+        clip: rect(20px, 9999px, 70px, 0);
+    }
+
+    30% {
+        clip: rect(60px, 9999px, 30px, 0);
+    }
+
+    35% {
+        clip: rect(40px, 9999px, 80px, 0);
+    }
+
+    40% {
+        clip: rect(70px, 9999px, 50px, 0);
+    }
+
+    45% {
+        clip: rect(10px, 9999px, 90px, 0);
+    }
+
+    50% {
+        clip: rect(50px, 9999px, 20px, 0);
+    }
+
+    55% {
+        clip: rect(90px, 9999px, 40px, 0);
+    }
+
+    60% {
+        clip: rect(20px, 9999px, 70px, 0);
+    }
+
+    65% {
+        clip: rect(60px, 9999px, 30px, 0);
+    }
+
+    70% {
+        clip: rect(40px, 9999px, 80px, 0);
+    }
+
+    75% {
+        clip: rect(70px, 9999px, 50px, 0);
+    }
+
+    80% {
+        clip: rect(30px, 9999px, 10px, 0);
+    }
+
+    85% {
+        clip: rect(80px, 9999px, 90px, 0);
+    }
+
+    90% {
+        clip: rect(50px, 9999px, 20px, 0);
+    }
+
+    95% {
+        clip: rect(10px, 9999px, 60px, 0);
+    }
+
+    100% {
+        clip: rect(90px, 9999px, 40px, 0);
+    }
+}
+
+@keyframes glitch-anim2 {
+    0% {
+        clip: rect(60px, 9999px, 30px, 0);
+    }
+
+    5% {
+        clip: rect(40px, 9999px, 80px, 0);
+    }
+
+    10% {
+        clip: rect(70px, 9999px, 50px, 0);
+    }
+
+    15% {
+        clip: rect(10px, 9999px, 90px, 0);
+    }
+
+    20% {
+        clip: rect(50px, 9999px, 20px, 0);
+    }
+
+    25% {
+        clip: rect(90px, 9999px, 40px, 0);
+    }
+
+    30% {
+        clip: rect(20px, 9999px, 70px, 0);
+    }
+
+    35% {
+        clip: rect(60px, 9999px, 30px, 0);
+    }
+
+    40% {
+        clip: rect(40px, 9999px, 80px, 0);
+    }
+
+    45% {
+        clip: rect(70px, 9999px, 50px, 0);
+    }
+
+    50% {
+        clip: rect(30px, 9999px, 10px, 0);
+    }
+
+    55% {
+        clip: rect(80px, 9999px, 90px, 0);
+    }
+
+    60% {
+        clip: rect(50px, 9999px, 20px, 0);
+    }
+
+    65% {
+        clip: rect(10px, 9999px, 60px, 0);
+    }
+
+    70% {
+        clip: rect(90px, 9999px, 40px, 0);
+    }
+
+    75% {
+        clip: rect(20px, 9999px, 70px, 0);
+    }
+
+    80% {
+        clip: rect(60px, 9999px, 30px, 0);
+    }
+
+    85% {
+        clip: rect(40px, 9999px, 80px, 0);
+    }
+
+    90% {
+        clip: rect(70px, 9999px, 50px, 0);
+    }
+
+    95% {
+        clip: rect(30px, 9999px, 10px, 0);
+    }
+
+    100% {
+        clip: rect(80px, 9999px, 90px, 0);
+    }
+}
+
+/* Custom Cursor */
+.cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease, background-color 0.2s ease;
+    mix-blend-mode: difference;
+}
+
+.cursor.hover {
+    transform: translate(-50%, -50%) scale(1.5);
+    background-color: var(--accent-color);
+    border-color: transparent;
+}
+
+/* Hide default cursor on body */
+body {
+    cursor: none;
+}
+
+/* Ensure links and buttons show pointer for fallback/accessibility if JS fails, 
+   but our custom cursor will overlay it. 
+   Actually, to fully replace, we keep cursor: none on everything. */
+a,
+button,
+.btn,
+input,
+textarea {
+    cursor: none;
+}
+
+/* Locations Section */
+.locations {
+    padding: 100px 0;
+    background-color: var(--dark-bg);
+    position: relative;
+}
+
+.locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.location-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.location-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.1);
+}
+
+.location-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: var(--primary-color);
+}
+
+.location-icon svg {
+    width: 30px;
+    height: 30px;
+}
+
+.location-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.location-text {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.portfolio-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+}
+
+/* Founder Social Links Overlay */
+.owner-photo {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.owner-social-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+.owner-photo.active .owner-social-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.owner-social-link {
+    color: white;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.owner-social-link:hover {
+    color: var(--primary-color);
+    transform: scale(1.2);
+}
+
+.owner-social-link svg {
+    width: 30px;
+    height: 30px;
+}

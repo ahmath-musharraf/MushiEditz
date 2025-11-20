@@ -577,3 +577,70 @@ portfolioModal.addEventListener('click', (e) => {
     }
 });
 
+// Testimonial Slider
+const testimonialCards = document.querySelectorAll('.testimonial-card');
+const testimonialGrid = document.querySelector('.testimonials-grid');
+const prevBtn = document.querySelector('.slider-nav.prev');
+const nextBtn = document.querySelector('.slider-nav.next');
+const dotsContainer = document.getElementById('testimonial-dots');
+
+let currentSlide = 0;
+let autoPlayInterval;
+
+// Create dots
+testimonialCards.forEach((_, index) => {
+    const dot = document.createElement('div');
+    dot.classList.add('slider-dot');
+    if (index === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => goToSlide(index));
+    dotsContainer.appendChild(dot);
+});
+
+const dots = document.querySelectorAll('.slider-dot');
+
+function goToSlide(index) {
+    // Remove active class from all
+    testimonialCards.forEach(card => card.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+
+    // Add active to current
+    currentSlide = index;
+    testimonialCards[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+
+    // Move slider
+    testimonialGrid.style.transform = `translateX(-${currentSlide * 100}%)`;
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % testimonialCards.length;
+    goToSlide(currentSlide);
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + testimonialCards.length) % testimonialCards.length;
+    goToSlide(currentSlide);
+}
+
+// Event listeners
+prevBtn.addEventListener('click', prevSlide);
+nextBtn.addEventListener('click', nextSlide);
+
+// Auto-play
+function startAutoPlay() {
+    autoPlayInterval = setInterval(nextSlide, 5000);
+}
+
+function stopAutoPlay() {
+    clearInterval(autoPlayInterval);
+}
+
+// Initialize first slide
+goToSlide(0);
+startAutoPlay();
+
+// Pause on hover
+const sliderContainer = document.querySelector('.testimonials-slider-container');
+sliderContainer.addEventListener('mouseenter', stopAutoPlay);
+sliderContainer.addEventListener('mouseleave', startAutoPlay);
+

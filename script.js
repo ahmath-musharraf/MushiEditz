@@ -578,3 +578,107 @@ portfolioModal.addEventListener('click', (e) => {
 });
 
 
+
+// Testimonial Slider Logic
+const track = document.querySelector('.testimonials-track');
+const cards = document.querySelectorAll('.testimonial-card');
+const nextBtn = document.querySelector('.slider-nav.next');
+const prevBtn = document.querySelector('.slider-nav.prev');
+const dotsContainer = document.querySelector('.slider-dots');
+
+if (track && cards.length > 0) {
+    let currentIndex = 0;
+    let cardsPerPage = window.innerWidth >= 768 ? 3 : 1;
+    let totalPages = Math.ceil(cards.length / cardsPerPage);
+    let autoPlayInterval;
+
+    // Create dots
+    function createDots() {
+        dotsContainer.innerHTML = '';
+        for (let i = 0; i < totalPages; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('slider-dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+                currentIndex = i;
+                updateSlider();
+                resetAutoPlay();
+            });
+            dotsContainer.appendChild(dot);
+        }
+    }
+
+    function updateSlider() {
+        const cardWidth = cards[0].offsetWidth;
+        const gap = 32; // 2rem gap
+        const moveAmount = (cardWidth + gap) * cardsPerPage * currentIndex;
+        track.style.transform = `translateX(-${moveAmount}px)`;
+
+        // Update dots
+        const dots = document.querySelectorAll('.slider-dot');
+        dots.forEach((dot, index) => {
+            if (index === currentIndex) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
+
+    function nextSlide() {
+        currentIndex++;
+        if (currentIndex >= totalPages) {
+            currentIndex = 0;
+        }
+        updateSlider();
+    }
+
+    function prevSlide() {
+        currentIndex--;
+        if (currentIndex < 0) {
+            currentIndex = totalPages - 1;
+        }
+        updateSlider();
+    }
+
+    // Event Listeners
+    nextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetAutoPlay();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetAutoPlay();
+    });
+
+    // Auto Play
+    function startAutoPlay() {
+        autoPlayInterval = setInterval(nextSlide, 5000);
+    }
+
+    function resetAutoPlay() {
+        clearInterval(autoPlayInterval);
+        startAutoPlay();
+    }
+
+    // Handle Resize
+    window.addEventListener('resize', () => {
+        const newCardsPerPage = window.innerWidth >= 768 ? 3 : 1;
+        if (newCardsPerPage !== cardsPerPage) {
+            cardsPerPage = newCardsPerPage;
+            totalPages = Math.ceil(cards.length / cardsPerPage);
+            currentIndex = 0;
+            createDots();
+            updateSlider();
+        }
+    });
+
+    // Initialize
+    createDots();
+    startAutoPlay();
+    
+    // Pause on hover
+    track.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+    track.addEventListener('mouseleave', startAutoPlay);
+}

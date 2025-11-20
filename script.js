@@ -490,3 +490,90 @@ if (ownerPhoto) {
     });
 }
 
+// Portfolio Modal
+const portfolioData = {
+    'web-dev': [
+        { title: 'E-Commerce Store', category: 'Web Development', img: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=400&q=80', link: '#' },
+        { title: 'Business Website', category: 'Web Development', img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=80', link: '#' },
+        { title: 'Portfolio Site', category: 'Web Development', img: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&q=80', link: '#' },
+        { title: 'Blog Platform', category: 'Web Development', img: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=400&q=80', link: '#' }
+    ],
+    'mobile-dev': [
+        { title: 'Banking App', category: 'Mobile Development', img: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&q=80', link: '#' },
+        { title: 'Fitness Tracker', category: 'Mobile Development', img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80', link: '#' },
+        { title: 'Food Delivery', category: 'Mobile Development', img: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&q=80', link: '#' },
+        { title: 'Social Media App', category: 'Mobile Development', img: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&q=80', link: '#' }
+    ],
+    'web-design': [
+        { title: 'Corporate Site', category: 'Web Design', img: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&q=80', link: '#' },
+        { title: 'Landing Page', category: 'Web Design', img: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=400&q=80', link: '#' },
+        { title: 'Agency Website', category: 'Web Design', img: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&q=80', link: '#' },
+        { title: 'Product Showcase', category: 'Web Design', img: 'https://images.unsplash.com/photo-1547658719-da2b51169166?w=400&q=80', link: '#' }
+    ],
+    'branding': [
+        { title: 'Logo Design', category: 'Branding', img: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&q=80', link: '#' },
+        { title: 'Brand Guidelines', category: 'Branding', img: 'https://images.unsplash.com/photo-1558655146-d09347e92766?w=400&q=80', link: '#' },
+        { title: 'Visual Identity', category: 'Branding', img: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=400&q=80', link: '#' },
+        { title: 'Packaging Design', category: 'Branding', img: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&q=80', link: '#' }
+    ],
+    'ui-ux': [
+        { title: 'Dashboard UI', category: 'UI/UX Design', img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=80', link: '#' },
+        { title: 'Mobile App UI', category: 'UI/UX Design', img: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&q=80', link: '#' },
+        { title: 'Web App Interface', category: 'UI/UX Design', img: 'https://images.unsplash.com/photo-1559028012-481c04fa702d?w=400&q=80', link: '#' },
+        { title: 'User Experience', category: 'UI/UX Design', img: 'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=400&q=80', link: '#' }
+    ]
+};
+
+const portfolioModal = document.getElementById('portfolio-modal');
+const modalTitle = document.getElementById('modal-title');
+const modalSubtitle = document.getElementById('modal-subtitle');
+const modalGrid = document.getElementById('modal-portfolio-grid');
+const closeModalBtn = document.querySelector('.close-modal');
+
+// Open modal when clicking portfolio items
+document.querySelectorAll('.portfolio-item').forEach(item => {
+    item.addEventListener('click', function () {
+        const category = this.getAttribute('data-category');
+        const categoryTitle = this.querySelector('h3').textContent;
+        const categorySubtitle = this.querySelector('p').textContent;
+
+        // Update modal header
+        modalTitle.textContent = categoryTitle;
+        modalSubtitle.textContent = categorySubtitle;
+
+        // Clear and populate grid
+        modalGrid.innerHTML = '';
+        const projects = portfolioData[category] || [];
+
+        projects.forEach(project => {
+            const projectCard = document.createElement('a');
+            projectCard.href = project.link;
+            projectCard.className = 'modal-portfolio-item';
+            projectCard.target = '_blank';
+            projectCard.innerHTML = `
+                <div class="modal-item-image" style="background-image: url('${project.img}');"></div>
+                <div class="modal-item-content">
+                    <h3 class="modal-item-title">${project.title}</h3>
+                    <p class="modal-item-category">${project.category}</p>
+                </div>
+            `;
+            modalGrid.appendChild(projectCard);
+        });
+
+        // Show modal
+        portfolioModal.classList.add('active');
+    });
+});
+
+// Close modal
+closeModalBtn.addEventListener('click', () => {
+    portfolioModal.classList.remove('active');
+});
+
+// Close modal when clicking outside
+portfolioModal.addEventListener('click', (e) => {
+    if (e.target === portfolioModal) {
+        portfolioModal.classList.remove('active');
+    }
+});
+

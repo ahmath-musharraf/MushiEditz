@@ -361,8 +361,8 @@
                 <p class="section-subtitle">Showcasing our best work and creative solutions</p>
             </div>
             <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <a href="#" class="portfolio-link">
+                <div class="portfolio-item" data-category="web-dev">
+                    <div class="portfolio-link">
                         <div class="portfolio-image"
                             style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80');">
                             <div class="portfolio-overlay">
@@ -370,10 +370,10 @@
                                 <p>Web Development</p>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
-                <div class="portfolio-item">
-                    <a href="#" class="portfolio-link">
+                <div class="portfolio-item" data-category="mobile-dev">
+                    <div class="portfolio-link">
                         <div class="portfolio-image"
                             style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80');">
                             <div class="portfolio-overlay">
@@ -381,10 +381,10 @@
                                 <p>Mobile Development</p>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
-                <div class="portfolio-item">
-                    <a href="#" class="portfolio-link">
+                <div class="portfolio-item" data-category="web-design">
+                    <div class="portfolio-link">
                         <div class="portfolio-image"
                             style="background-image: url('https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80');">
                             <div class="portfolio-overlay">
@@ -392,10 +392,10 @@
                                 <p>Web Design</p>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
-                <div class="portfolio-item">
-                    <a href="#" class="portfolio-link">
+                <div class="portfolio-item" data-category="mobile-dev">
+                    <div class="portfolio-link">
                         <div class="portfolio-image"
                             style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80');">
                             <div class="portfolio-overlay">
@@ -403,10 +403,10 @@
                                 <p>Mobile Development</p>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
-                <div class="portfolio-item">
-                    <a href="https://www.behance.net/gallery/234949067/Brand-Guidance-BCAS-Campus-V20" class="portfolio-link">
+                <div class="portfolio-item" data-category="branding">
+                    <div class="portfolio-link">
                         <div class="portfolio-image"
                             style="background-image: url('https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80');">
                             <div class="portfolio-overlay">
@@ -414,10 +414,10 @@
                                 <p>Branding</p>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
-                <div class="portfolio-item">
-                    <a href="#" class="portfolio-link">
+                <div class="portfolio-item" data-category="ui-ux">
+                    <div class="portfolio-link">
                         <div class="portfolio-image"
                             style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80');">
                             <div class="portfolio-overlay">
@@ -425,7 +425,7 @@
                                 <p>UI/UX Design</p>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -726,7 +726,7 @@
                         </div>
                         <div>
                             <h3>Address</h3>
-                            <p>Dubai & Sri Lanka</p>
+                            <p>Sri Lanka</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -850,6 +850,21 @@
         </svg>
     </a>
 
+    <!-- Portfolio Modal -->
+    <div id="portfolio-modal" class="portfolio-modal">
+        <div class="portfolio-modal-content">
+            <button class="close-modal" aria-label="Close">&times;</button>
+            <div class="modal-header">
+                <h2 class="modal-title" id="modal-title">Portfolio Projects</h2>
+                <p class="modal-subtitle" id="modal-subtitle">Explore our work</p>
+            </div>
+            <div class="modal-portfolio-grid" id="modal-portfolio-grid">
+                <!-- Projects will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
     <div class="cursor"></div>
     <script src="script.js"></script>
 </body>

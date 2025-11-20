@@ -13,6 +13,9 @@
 </head>
 
 <body>
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+    </div>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -50,7 +53,8 @@
             </div>
             <h1 class="hero-title">
                 <span class="title-line">We Create</span>
-                <span class="title-line gradient-text">Digital Experiences</span>
+                <span class="title-line gradient-text glitch-text" data-text="Digital Experiences">Digital
+                    Experiences</span>
                 <span class="title-line">That Matter</span>
             </h1>
             <p class="hero-subtitle">Transforming ideas into powerful digital solutions that drive growth and engagement
@@ -298,6 +302,23 @@
                     <div class="owner-photo">
                         <img src="Musharraf.jpg" alt="Ahmath Musharraf - Founder & CEO" id="ownerImage">
                         <div class="owner-photo-glow"></div>
+                        <!-- Social Links Overlay -->
+                        <div class="owner-social-overlay">
+                            <a href="https://www.facebook.com/mushieditz" class="owner-social-link"
+                                aria-label="Facebook" target="_blank">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2V12h2.3l-.4 3h-1.9v7A10 10 0 0 0 22 12z" />
+                                </svg>
+                            </a>
+                            <a href="https://www.instagram.com/mushieditz" class="owner-social-link"
+                                aria-label="Instagram" target="_blank">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h10zm-5 3.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 2A2.5 2.5 0 1 1 9.5 12 2.5 2.5 0 0 1 12 9.5zm4.8-3.4a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1z" />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="owner-text">
@@ -341,58 +362,70 @@
             </div>
             <div class="portfolio-grid">
                 <div class="portfolio-item">
-                    <div class="portfolio-image"
-                        style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80');">
-                        <div class="portfolio-overlay">
-                            <h3>E-Commerce Platform</h3>
-                            <p>Web Development</p>
+                    <a href="#" class="portfolio-link">
+                        <div class="portfolio-image"
+                            style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80');">
+                            <div class="portfolio-overlay">
+                                <h3>E-Commerce Platform</h3>
+                                <p>Web Development</p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="portfolio-item">
-                    <div class="portfolio-image"
-                        style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80');">
-                        <div class="portfolio-overlay">
-                            <h3>Mobile Banking App</h3>
-                            <p>Mobile Development</p>
+                    <a href="#" class="portfolio-link">
+                        <div class="portfolio-image"
+                            style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80');">
+                            <div class="portfolio-overlay">
+                                <h3>Mobile Banking App</h3>
+                                <p>Mobile Development</p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="portfolio-item">
-                    <div class="portfolio-image"
-                        style="background-image: url('https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80');">
-                        <div class="portfolio-overlay">
-                            <h3>Corporate Website</h3>
-                            <p>Web Design</p>
+                    <a href="#" class="portfolio-link">
+                        <div class="portfolio-image"
+                            style="background-image: url('https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80');">
+                            <div class="portfolio-overlay">
+                                <h3>Corporate Website</h3>
+                                <p>Web Design</p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="portfolio-item">
-                    <div class="portfolio-image"
-                        style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80');">
-                        <div class="portfolio-overlay">
-                            <h3>Fitness App</h3>
-                            <p>Mobile Development</p>
+                    <a href="#" class="portfolio-link">
+                        <div class="portfolio-image"
+                            style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80');">
+                            <div class="portfolio-overlay">
+                                <h3>Fitness App</h3>
+                                <p>Mobile Development</p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="portfolio-item">
-                    <div class="portfolio-image"
-                        style="background-image: url('https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80');">
-                        <div class="portfolio-overlay">
-                            <h3>Brand Identity</h3>
-                            <p>Branding</p>
+                    <a href="#" class="portfolio-link">
+                        <div class="portfolio-image"
+                            style="background-image: url('https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80');">
+                            <div class="portfolio-overlay">
+                                <h3>Brand Identity</h3>
+                                <p>Branding</p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="portfolio-item">
-                    <div class="portfolio-image"
-                        style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80');">
-                        <div class="portfolio-overlay">
-                            <h3>Dashboard Design</h3>
-                            <p>UI/UX Design</p>
+                    <a href="#" class="portfolio-link">
+                        <div class="portfolio-image"
+                            style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80');">
+                            <div class="portfolio-overlay">
+                                <h3>Dashboard Design</h3>
+                                <p>UI/UX Design</p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -640,6 +673,41 @@
         </div>
     </section>
 
+    <!-- Locations Section -->
+    <section id="locations" class="locations">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Locations</h2>
+                <p class="section-subtitle">Serving clients globally from our strategic hubs</p>
+            </div>
+            <div class="locations-grid">
+                <!-- Dubai Location -->
+                <div class="location-card">
+                    <div class="location-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h3 class="location-title">Dubai, UAE</h3>
+                    <p class="location-text">Strategic Hub</p>
+                </div>
+
+                <!-- Sri Lanka Location -->
+                <div class="location-card">
+                    <div class="location-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h3 class="location-title">Sri Lanka</h3>
+                    <p class="location-text">Development Center</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
@@ -755,7 +823,8 @@
                         </a>
 
                         <!-- WhatsApp -->
-                        <a href="https://wa.me/+940767765080" aria-label="Whatsapp">
+                        <a href="https://wa.me/+940767765080?text=I%20want%20services%20from%20Mushi%20Editz"
+                            aria-label="Whatsapp">
                             <svg viewBox="0 0 24 24" fill="currentColor">
                                 <path
                                     d="M12 2a10 10 0 0 0-8.7 15l-1.1 4.1 4.2-1.1A10 10 0 1 0 12 2zm5.3 14.3c-.2.6-1 1-1.6 1.1-.4 0-.9.1-2.9-.9-2.4-1.2-3.9-3.3-4-3.5-.1-.2-.9-1.2-.9-2.3 0-1.1.6-1.6.9-1.8.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.3.1.5 0 .7s-.2.5-.4.8l-.2.2c-.1.1-.2.3-.1.5.2.4.8 1.4 1.7 2.2 1.1 1 2 .3 2.3.1.3-.2.5-.2.8 0l1.7.8c.4.2.4.3.5.5.1.2.1.6-.1 1z" />
@@ -773,13 +842,15 @@
     </footer>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/+940767765080" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/+940767765080?text=I%20want%20services%20from%20Mushi%20Editz" class="whatsapp-float"
+        target="_blank" aria-label="Chat on WhatsApp">
         <svg viewBox="0 0 24 24" fill="currentColor">
             <path
                 d="M12 2a10 10 0 0 0-8.7 15l-1.1 4.1 4.2-1.1A10 10 0 1 0 12 2zm5.3 14.3c-.2.6-1 1-1.6 1.1-.4 0-.9.1-2.9-.9-2.4-1.2-3.9-3.3-4-3.5-.1-.2-.9-1.2-.9-2.3 0-1.1.6-1.6.9-1.8.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.3.1.5 0 .7s-.2.5-.4.8l-.2.2c-.1.1-.2.3-.1.5.2.4.8 1.4 1.7 2.2 1.1 1 2 .3 2.3.1.3-.2.5-.2.8 0l1.7.8c.4.2.4.3.5.5.1.2.1.6-.1 1z" />
         </svg>
     </a>
 
+    <div class="cursor"></div>
     <script src="script.js"></script>
 </body>
 

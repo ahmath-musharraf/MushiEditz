@@ -44,7 +44,7 @@ if (canvas) {
 
     function animateParticles() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
+
         particles.forEach(particle => {
             particle.update();
             particle.draw();
@@ -103,13 +103,13 @@ let lastScroll = 0;
 
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
-    
+
     if (currentScroll > 100) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
     }
-    
+
     lastScroll = currentScroll;
 });
 
@@ -164,18 +164,25 @@ const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        
+
         // Get form data
         const formData = new FormData(contactForm);
         const name = contactForm.querySelector('input[type="text"]').value;
         const email = contactForm.querySelector('input[type="email"]').value;
         const subject = contactForm.querySelectorAll('input[type="text"]')[1].value;
         const message = contactForm.querySelector('textarea').value;
-        
+
         // Simple validation
         if (name && email && subject && message) {
-            // Here you would typically send the data to a server
-            alert('Thank you for your message! We will get back to you soon.');
+            // Construct WhatsApp message
+            const whatsappMessage = `*New Contact Request*\n\n*Name:* ${name}\n*Email:* ${email}\n*Subject:* ${subject}\n*Message:* ${message}`;
+
+            // Encode message for URL
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+
+            // Redirect to WhatsApp
+            window.open(`https://wa.me/+940767765080?text=${encodedMessage}`, '_blank');
+
             contactForm.reset();
         } else {
             alert('Please fill in all fields.');
@@ -216,7 +223,7 @@ if (statsSection) {
             }
         });
     }, { threshold: 0.5 });
-    
+
     statsObserver.observe(statsSection);
 }
 
@@ -239,7 +246,7 @@ if (aboutStatsSection) {
             }
         });
     }, { threshold: 0.5 });
-    
+
     aboutStatsObserver.observe(aboutStatsSection);
 }
 
@@ -257,13 +264,13 @@ const sections = document.querySelectorAll('section[id]');
 
 window.addEventListener('scroll', () => {
     const scrollY = window.pageYOffset;
-    
+
     sections.forEach(section => {
         const sectionHeight = section.offsetHeight;
         const sectionTop = section.offsetTop - 100;
         const sectionId = section.getAttribute('id');
         const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
-        
+
         if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.classList.remove('active');
@@ -293,11 +300,11 @@ const maxTrailLength = 20;
 
 document.addEventListener('mousemove', (e) => {
     cursorTrail.push({ x: e.clientX, y: e.clientY, time: Date.now() });
-    
+
     if (cursorTrail.length > maxTrailLength) {
         cursorTrail.shift();
     }
-    
+
     // Remove old trail points
     cursorTrail = cursorTrail.filter(point => Date.now() - point.time < 500);
 });
@@ -307,7 +314,7 @@ window.addEventListener('mousemove', (e) => {
     const shapes = document.querySelectorAll('.shape');
     const mouseX = e.clientX / window.innerWidth;
     const mouseY = e.clientY / window.innerHeight;
-    
+
     shapes.forEach((shape, index) => {
         const speed = (index + 1) * 20;
         const x = (mouseX - 0.5) * speed;
@@ -322,10 +329,10 @@ document.querySelectorAll('.btn').forEach(btn => {
         const rect = btn.getBoundingClientRect();
         const x = e.clientX - rect.left - rect.width / 2;
         const y = e.clientY - rect.top - rect.height / 2;
-        
+
         btn.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
     });
-    
+
     btn.addEventListener('mouseleave', () => {
         btn.style.transform = 'translate(0, 0)';
     });
@@ -337,16 +344,16 @@ document.querySelectorAll('.service-card').forEach(card => {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        
+
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
-        
+
         const rotateX = (y - centerY) / 15;
         const rotateY = (centerX - x) / 15;
-        
+
         card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px) scale(1.02)`;
     });
-    
+
     card.addEventListener('mouseleave', () => {
         card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(-10px) scale(1.02)';
         setTimeout(() => {
@@ -370,11 +377,11 @@ document.querySelectorAll('.section-title, .section-subtitle').forEach(el => {
 
 // Add glow effect to portfolio items on hover
 document.querySelectorAll('.portfolio-item').forEach(item => {
-    item.addEventListener('mouseenter', function() {
+    item.addEventListener('mouseenter', function () {
         this.style.filter = 'brightness(1.1)';
     });
-    
-    item.addEventListener('mouseleave', function() {
+
+    item.addEventListener('mouseleave', function () {
         this.style.filter = 'brightness(1)';
     });
 });
@@ -420,7 +427,7 @@ if (ownerSection) {
             if (entry.isIntersecting) {
                 const ownerPhoto = entry.target.querySelector('.owner-photo');
                 const ownerText = entry.target.querySelector('.owner-text');
-                
+
                 if (ownerPhoto) {
                     ownerPhoto.style.opacity = '0';
                     ownerPhoto.style.transform = 'translateX(-50px) scale(0.9)';
@@ -430,7 +437,7 @@ if (ownerSection) {
                         ownerPhoto.style.transform = 'translateX(0) scale(1)';
                     }, 100);
                 }
-                
+
                 if (ownerText) {
                     ownerText.style.opacity = '0';
                     ownerText.style.transform = 'translateX(50px)';
@@ -440,12 +447,46 @@ if (ownerSection) {
                         ownerText.style.transform = 'translateX(0)';
                     }, 200);
                 }
-                
+
                 ownerObserver.unobserve(entry.target);
             }
         });
     }, { threshold: 0.2 });
-    
+
     ownerObserver.observe(ownerSection);
+}
+
+// Scroll Progress Indicator
+window.addEventListener('scroll', () => {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    const progressBar = document.getElementById('scrollProgressBar');
+    if (progressBar) {
+        progressBar.style.width = scrolled + "%";
+    }
+});
+
+// Custom Cursor
+const cursor = document.querySelector('.cursor');
+if (cursor) {
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+
+    const hoverElements = document.querySelectorAll('a, button, .btn, input, textarea, .service-card, .portfolio-item');
+    hoverElements.forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    });
+}
+
+// Founder Image Click to Show Socials
+const ownerPhoto = document.querySelector('.owner-photo');
+if (ownerPhoto) {
+    ownerPhoto.addEventListener('click', function () {
+        this.classList.toggle('active');
+    });
 }
 

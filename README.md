@@ -1,5 +1,4 @@
-# Digital Gravity Website Clone
-
+# Digital Gravity Website
 A modern, responsive clone of the Digital Gravity website built with HTML, CSS, and JavaScript.
 
 ## Features
